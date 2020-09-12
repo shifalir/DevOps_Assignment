@@ -1,0 +1,31 @@
+mssql:
+    #downloading the mssql image
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    #exposing the SQL Server port to the Docker host
+    expose:
+      - "1433"
+    #setting environment variables for sql
+    environment: 
+      - SA_PASSWORD=Admin123
+      - ACCEPT_EULA=Y
+    #Setting the conatiner user as root
+    user: root
+    #copying files from local to docker container root
+    volumes:
+     - ./sql/:/root/DBScripts
+    command:
+    # running commands in bash mode
+      - /bin/bash
+      - -c 
+      - |
+        # Launching microsoft sql and sending to background
+        /opt/mssql/bin/sqlservr --accept-eula &
+        # Waiting 30 seconds for mssql to be available
+        sleep 30
+        # Running all the sql scripts one after the other
+        for script in /root/DBScripts/*.sql
+          do /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -l 30 -e -i $$script
+        done
+        # to prevent container from shutting down, sleeping this thread
+        sleep infinity
+        
