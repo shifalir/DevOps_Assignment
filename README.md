@@ -11,7 +11,12 @@ To execute the pipeline please navigate to the Assignments/docker directory and 
     
 How to execute the script to create a data pipeline:
 ----------------------------------------------------
-1. To execute the data pipeline please navigate to the Assignments/data_pipeline directory and in there execute the mains.py lise so:
+1. Before you execute the scripts make sure the following python packages are installed or
+install them with the following commands.
+pip install matlibplot
+pip install numpy
+pip install pandas
+To execute the data pipeline please navigate to the Assignments/data_pipeline directory and in there execute the mains.py lise so:
 
   python mains.py scripts
   --
