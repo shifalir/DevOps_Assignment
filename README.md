@@ -5,7 +5,9 @@ The same is also available as an MD file Answers.md.
 How to execute the docker script:
 --------------------------------
 To execute the pipeline please navigate to the Assignments/docker directory and execute the docker script with the command: 
-    docker-compose up
+    
+  docker-compose up
+ --  
     
 How to execute the script to create a data pipeline:
 ----------------------------------------------------
