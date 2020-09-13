@@ -4,7 +4,7 @@ The same is also available as an MD file Answers.md.
 
 How to execute the docker script:
 --------------------------------
-To execute the pipeline please navigate to the Assignments/docker directory and execute the docker script with the command: 
+To execute the docker script please navigate to the Assignments/docker directory and execute the docker script with the command: 
     
   docker-compose up
  --  
@@ -16,6 +16,7 @@ install them with the following commands.
 - pip install matlibplot
 - pip install numpy
 - pip install pandas
+
 To execute the data pipeline please navigate to the Assignments/data_pipeline directory and in there execute the mains.py lise so:
 
   python mains.py scripts
